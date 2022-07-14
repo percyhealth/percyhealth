@@ -1,0 +1,61 @@
+{
+  "name": "crud-template-backend",
+  "version": "1.0.0",
+  "description": "DALI Lab CRUD template",
+  "productionURL": "https://your-api-url.here",
+  "productionClientURL": "https://your-app-url.here",
+  "main": "src/server.js",
+  "repository": "https://github.com/dali-lab/crud-template-backend",
+  "author": "Adam McQuilkin <Adam.J.Mcquilkin.22@Dartmouth.edu>",
+  "contributors": [
+    "Adam McQuilkin <Adam.J.Mcquilkin.22@Dartmouth.edu>",
+    "Alex Lopez <Alejandro.A.Lopez.Cochachi.23@Dartmouth.edu>",
+    "Ziray Hao <Ziray.Hao.22@Dartmouth.edu>"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./src",
+    "test": "yarn lint && NODE_ENV=test jest --verbose --runInBand --detectOpenHandles",
+    "dev": "nodemon src/server.js --exec babel-node",
+    "start": "babel-node src/server.js",
+    "build": "babel src -d dist",
+    "prod": "yarn clean && yarn build && node dist/server.js",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.4",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
+    "axios": "^0.20.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-joi-validation": "^5.0.0",
+    "joi": "^17.4.2",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^5.10.7",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.15.4",
+    "@types/mongoose": "^5.11.97",
+    "debug": "^4.2.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.4.2",
+    "jest-environment-node": "^26.3.0",
+    "mongodb-memory-server": "^7.4.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2",
+    "uuid": "^8.3.0"
+  }
+}

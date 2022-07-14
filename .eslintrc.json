@@ -1,0 +1,39 @@
+{
+  "extends": "airbnb/base",
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": false,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "no-console": "off",
+    "comma-dangle": "off",
+    "linebreak-style": "off",
+    "no-underscore-dangle": "off",
+    "max-len": ["error", { "code": 200 }],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+
+    // Bugfix https://stackoverflow.com/questions/63961803/eslint-says-all-enums-in-typescript-app-are-already-declared-in-the-upper-scope
+    "no-shadow": "off",
+    "no-unused-vars": ["error", { "vars": "all", "args": "none" }]
+  },
+  "plugins": [
+    "import"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src/"
+        ],
+        "extensions": [".js", ".ts"]
+      } // this loads <rootdir>/tsconfig.json to eslint
+    }
+  }
+}
