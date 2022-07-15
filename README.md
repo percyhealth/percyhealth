@@ -1,11 +1,8 @@
-# CRUD Template Backend
+# welcome to Percy Health
 
 ## Setup
 
 1. Add the file `.env` in the root directory
-2. Set `AUTH_SECRET` to any string
-3. Set `MONGODB_URI` to `mongodb://localhost:27017/<project-name>`
+2. Run `yarn` to install all packages
+3. Run `yarn dev` to start the server
 
-## Additional notes
-
-You may need to update `node` in order to install all the packages. This can be easily done [here](https://nodejs.org/en/)
