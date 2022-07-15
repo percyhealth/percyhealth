@@ -1,4 +1,4 @@
-# welcome to Percy Health
+# Welcome to Percy Health
 
 ## Setup
 
