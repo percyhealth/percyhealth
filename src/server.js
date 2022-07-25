@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 import { validationErrorHandler } from 'validation';
 import { errorHandler } from 'errors';
 import {
-  authRouter, userRouter, resourceRouter,
+  authRouter, userRouter, resourceRouter, questionaireRouter
 } from './routers';
 
 import * as constants from './helpers/constants';
@@ -28,9 +28,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // declare routers
+// see floursih server.js for alt option of handling multiple routes
 app.use('/auth', authRouter); // NOTE: Not secured
 app.use('/users', userRouter); // NOTE: Completely secured to users
 app.use('/resources', resourceRouter); // NOTE: Partially secured to users
+app.use('/questionaires', questionaireRouter); // NOTE: Partially secured to users
 
 // default index route
 app.get('/', (req, res) => {
@@ -49,7 +51,7 @@ const mongooseOptions = {
 // Connect the database
 mongoose.connect(process.env.MONGODB_URI, mongooseOptions).then(() => {
   mongoose.Promise = global.Promise; // configures mongoose to use ES6 Promises
-  if (process.env.NODE_ENV !== 'test') console.info('Connected to Database');
+  if (process.env.NODE_ENV !== 'test') console.info('Connected to Database: ', process.env.MONGODB_URI);
 }).catch((err) => {
   console.error('Not Connected to Database - ERROR! ', err);
 });

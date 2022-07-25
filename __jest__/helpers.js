@@ -15,6 +15,7 @@ async function connectDB(done) {
   };
 
   mongoose.connect(process.env.MONGO_URL, mongooseOpts);
+  console.log(process);
 
   mongoose.connection.on('error', (e) => {
     console.error(e);
@@ -26,7 +27,7 @@ async function connectDB(done) {
   });
 
   mongoose.connection.once('open', () => {
-    // console.log(`MongoDB successfully connected to ${process.env.MONGO_URL}`);
+    console.log(`MongoDB successfully connected to ${process.env.MONGO_URL}`);
     done();
   });
 }
