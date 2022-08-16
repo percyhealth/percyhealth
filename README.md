@@ -26,6 +26,6 @@ Currently, there are also a **user** and **resource** entities in the repository
 1. Run `yarn test` to run test suites
 
 ### Contributors
-[Backend Template](https://github.com/dali-lab/crud-template-backend)
-[Laurel Dernbach](https://github.com/laureldernbach)
+- [Backend Template](https://github.com/dali-lab/crud-template-backend)
+- [Laurel Dernbach](https://github.com/laureldernbach)
 
