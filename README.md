@@ -13,6 +13,7 @@ Currently, there are also a **user** and **resource** entities in the repository
 - React.js
 - Express
 - Jest
+- MongoDB (see `.env` file for the connection string to manipulate this data via MongoDB Compass or login online via the Percy Health admin)
 
 ## Setup
 
@@ -25,5 +26,6 @@ Currently, there are also a **user** and **resource** entities in the repository
 1. Run `yarn test` to run test suites
 
 ### Contributors
+[Backend Template](https://github.com/dali-lab/crud-template-backend)
 [Laurel Dernbach](https://github.com/laureldernbach)
 
