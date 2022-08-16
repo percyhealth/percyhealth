@@ -17,9 +17,10 @@ Currently, there are also a **user** and **resource** entities in the repository
 
 ## Setup
 
-1. Add the file `.env` in the root directory (contact an admin or contributor for this information)
-2. Run `yarn` to install all packages
-3. Run `yarn dev` to start the server
+1. Clone this repository into Visual Studio Code
+2. Add the file `.env` in the root directory (contact an admin or contributor for this information)
+3. Run `yarn` to install all packages
+4. Run `yarn dev` to start the server
 
 ## Testing
 
