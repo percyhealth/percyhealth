@@ -5,12 +5,12 @@ const QuestionaireSchema = new Schema({
   author: String,
   standard_frequency: String,
   description: String,
-  scoring_schema: [],
+  scoring_schema: {},
   // wondering if there needs to be a sub-schema for questions
   // such that each question has its own ObjectId
   // maybe not necesary tho, questions can be saved by number with
   // survey id
-  questions: []
+  questions: {}
 }, {
   toJSON: {
     virtuals: true,

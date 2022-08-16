@@ -5,8 +5,9 @@ export const CreateQuestionaireSchema = joi.object({
   author: joi.string().required(),
   standard_frequency: joi.string().required(),
   description: joi.string().required(),
-  scoring_schema: joi.array().required(),
-  questions: joi.array().required()
+  // changed to JSON
+  scoring_schema: joi.any().required(),
+  questions: joi.any().required()
 });
 
 export const UpdateQuestionaireSchema = joi.object({
@@ -14,6 +15,7 @@ export const UpdateQuestionaireSchema = joi.object({
   author: joi.string(),
   standard_frequency: joi.string(),
   description: joi.string(),
-  scoring_schema: joi.array(),
-  questions: joi.array()
+  // changed to JSON
+  scoring_schema: joi.any(),
+  questions: joi.any()
 });

@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 import { validationErrorHandler } from 'validation';
 import { errorHandler } from 'errors';
 import {
-  authRouter, userRouter, resourceRouter, questionaireRouter
+  authRouter, userRouter, resourceRouter, questionaireRouter, responseRouter
 } from './routers';
 
 import * as constants from './helpers/constants';
@@ -33,6 +33,7 @@ app.use('/auth', authRouter); // NOTE: Not secured
 app.use('/users', userRouter); // NOTE: Completely secured to users
 app.use('/resources', resourceRouter); // NOTE: Partially secured to users
 app.use('/questionaires', questionaireRouter); // NOTE: Partially secured to users
+app.use('/responses', responseRouter);
 
 // default index route
 app.get('/', (req, res) => {

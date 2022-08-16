@@ -1,3 +1,4 @@
+// TODO: rewrite tests to have relevant fields
 import { questionaireService } from 'services';
 
 import {
@@ -12,8 +13,40 @@ const questionaireDataA = {
   author: 'Laurel Dernbach',
   standard_frequency: 'weekly',
   description: 'an assesment to determine quality of life',
-  scoring_schema: [],
-  questions: []
+  scoring_schema: {
+    r_limit_phys: {
+      13: {
+        1: 0,
+        2: 25
+      },
+      14: {
+        1: 0,
+        2: 25
+      },
+      15: {
+        1: 0,
+        2: 25
+      },
+      16: {
+        1: 0,
+        2: 25
+      }
+    },
+  },
+  questions: {
+    1: {
+      instructions: null,
+      question: 'In general, would you say your health is:',
+      response_type: 'mc',
+      responses: {
+        1: 'Excellent',
+        2: 'Very good',
+        3: 'Good',
+        4: 'Fair',
+        5: 'Poor'
+      }
+    },
+  },
 };
 
 const questionaireDataB = {
@@ -21,8 +54,40 @@ const questionaireDataB = {
   author: 'Laurel Dernbach',
   standard_frequency: 'monthly',
   description: 'an assesment to determine joint mobility',
-  scoring_schema: [],
-  questions: []
+  scoring_schema: {
+    r_limit_phys: {
+      13: {
+        1: 0,
+        2: 25
+      },
+      14: {
+        1: 0,
+        2: 25
+      },
+      15: {
+        1: 0,
+        2: 25
+      },
+      16: {
+        1: 0,
+        2: 25
+      }
+    },
+  },
+  questions: {
+    1: {
+      instructions: null,
+      question: 'In general, would you say your health is:',
+      response_type: 'mc',
+      responses: {
+        1: 'Excellent',
+        2: 'Very good',
+        3: 'Good',
+        4: 'Fair',
+        5: 'Poor'
+      }
+    },
+  },
 };
 
 describe('questionaireService', () => {
@@ -52,7 +117,10 @@ describe('questionaireService', () => {
         expect(questionaire._id).toBeDefined();
         expect(questionaire.title).toBe(questionaireDataA.title);
         expect(questionaire.description).toBe(questionaireDataA.description);
-        expect(questionaire.value).toBe(questionaireDataA.value);
+        expect(questionaire.author).toBe(questionaireDataA.author);
+        expect(questionaire.standard_frequency).toBe(questionaireDataA.standard_frequency);
+        expect(questionaire.questions).toStrictEqual(questionaireDataA.questions);
+        expect(questionaire.scoring_schema).toStrictEqual(questionaireDataA.scoring_schema);
 
         done();
       } catch (error) {
@@ -67,7 +135,10 @@ describe('questionaireService', () => {
         expect(questionaire._id).toBeDefined();
         expect(questionaire.title).toBe(questionaireDataB.title);
         expect(questionaire.description).toBe(questionaireDataB.description);
-        expect(questionaire.value).toBe(questionaireDataB.value);
+        expect(questionaire.author).toBe(questionaireDataB.author);
+        expect(questionaire.standard_frequency).toBe(questionaireDataB.standard_frequency);
+        expect(questionaire.questions).toStrictEqual(questionaireDataB.questions);
+        expect(questionaire.scoring_schema).toStrictEqual(questionaireDataB.scoring_schema);
 
         done();
       } catch (error) {
@@ -81,9 +152,13 @@ describe('questionaireService', () => {
       try {
         const questionaire = await questionaireService.getQuestionaire(idQuestionaireA);
 
+        expect(questionaire._id).toBeDefined();
         expect(questionaire.title).toBe(questionaireDataA.title);
         expect(questionaire.description).toBe(questionaireDataA.description);
-        expect(questionaire.value).toBe(questionaireDataA.value);
+        expect(questionaire.author).toBe(questionaireDataA.author);
+        expect(questionaire.standard_frequency).toBe(questionaireDataA.standard_frequency);
+        expect(questionaire.questions).toStrictEqual(questionaireDataA.questions);
+        expect(questionaire.scoring_schema).toStrictEqual(questionaireDataA.scoring_schema);
 
         done();
       } catch (error) {
