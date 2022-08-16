@@ -1,4 +1,5 @@
 # Validation Overview
+### (template documentation)
 
 Although TypeScript does provide a lot of type safety, it is still vulnerable when handling IO. In this context, it is usually HTTP requests and responses, but it can arise in other situations. Therefore, it is helpful to verify the schema of variables before working with them.
 
